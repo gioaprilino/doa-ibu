@@ -110,7 +110,7 @@ class Profile extends BaseController
 
         if ($updateProfile) {
             $oldFile = file_exists($user->profile);
-            if ($oldFile) {
+            if ($oldFile && $oldFile != 'default.png') {
                 unlink($user->profile);
             }
             $img = $this->request->getFile('profile');
