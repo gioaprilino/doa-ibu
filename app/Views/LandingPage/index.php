@@ -5,24 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gossip</title>
-    <link rel="stylesheet" href="<?= base_url(); ?>/assets/ladingpage.css">
+    <link rel="stylesheet" href="<?= base_url(); ?>assets/landingpage.css">
 </head>
 
 <body>
     <div class="div1">
         <div class="background">
-
             <div class="logo">
-                <img src="<?= base_url(); ?>assest/logo.png" width="50" height="50">
+                <a href="<?= base_url('home'); ?>">
+                    <img src="<?= base_url(); ?>assets/logo.png" width="50" height="50">
+                </a>
             </div>
 
-            <form action="#">
+            <form action="<?= base_url('search'); ?>" method="get">
                 <input type="text" name="search" placeholder="cari postingan">
             </form>
-
-            <a href="#" class="button">login</a>
-
-            <a href="#" class="button2">regis</a>
+            <a href="<?= base_url('register'); ?>" class="button2">Register</a>
+            <a href="<?= base_url('login'); ?>" class="button">Login</a>
         </div>
     </div>
 
@@ -39,7 +38,7 @@
         </div>
 
         <div class="grid-item2 ">
-            <img src="<?= base_url(); ?>assest/org.png" alt="">
+            <img src="<?= base_url(); ?>assets/org.png" alt="">
         </div>
 
     </div>

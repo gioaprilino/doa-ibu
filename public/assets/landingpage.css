@@ -1,0 +1,88 @@
+html{
+  overflow-y: hidden;
+}
+body{
+    background-image: url(bg.jpg);
+    margin: 0;
+}
+.nav{
+    color: aqua;
+}
+.background{
+    height: 100px;
+    width: 100;
+}
+
+input[type=text]:focus{
+  color: white;
+}
+
+  input[type=text] {
+    color: white;
+    width: 50%;
+    margin: 4px;
+    box-sizing: border-box;
+    border-radius: 24px;
+    font-size: 14px;
+    background-color: rgb(63, 61, 61);
+    background-image: url('searchicon.png');
+    background-repeat: no-repeat;
+    padding: 12px;
+    position: absolute;
+    right: 40%;
+
+  }
+  .logo{
+    padding: 5px;
+    display: inline-block;
+    position: absolute;
+    left: 3%;
+    width: 3%;
+  }
+
+  .button {
+    background-color: #5c5e5c;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 7px;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    border-radius: 5px;
+  }
+
+  .button2 {
+    background-color: #5c5e5c;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 7px;
+    cursor: pointer;
+    position: absolute;
+    right: 10%;
+    border-radius: 5px;
+  }
+
+  .grid-container {
+    display: grid;
+    column-gap: 60px;
+    grid-template-columns: 50% 20% 20% ;
+    padding: 10px;
+
+  }
+
+  .grid-item {
+    border-radius: 20px;
+    margin-top: 10%;
+    margin-bottom: 50%;
+    padding: 30px;
+    color: #fff;
+    font: 20px garamound,sans-serif;
+  }

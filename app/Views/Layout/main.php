@@ -30,25 +30,29 @@
                     <ul class="sidebar-menu">
                         <li class="dropdown">
                             <a href="<?= base_url('home'); ?>" class="nav-link"><i class="fas fa-home" style="font-size: 1.3rem;"></i><span style="font-size: 1.5rem;">Home</span></a>
-                            <a data-bs-toggle="modal" data-bs-target="#modal-insert" class="nav-link"><i class="fas fa-plus-square" style="font-size: 1.3rem;"></i><span style="font-size: 1.5rem;">Create</span></a>
+                            <?php if (logged_in()) : ?>
+                                <a data-bs-toggle="modal" data-bs-target="#modal-insert" class="nav-link"><i class="fas fa-plus-square" style="font-size: 1.3rem;"></i><span style="font-size: 1.5rem;">Create</span></a>
+                            <?php endif; ?>
                         </li>
                     </ul>
                 </aside>
-                <li class="dropdown"><a data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
-                        <img alt="image" src="<?= base_url() . user()->profile; ?>" class="rounded-circle mr-1 img-fluid p-sidebar">
-                        <div class="d-sm-none d-lg-inline-block">Hi, <?= user()->username; ?>
+                <?php if (logged_in()) : ?>
+                    <li class="dropdown"><a data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                            <img alt="image" src="<?= base_url() . user()->profile; ?>" class="rounded-circle mr-1 img-fluid p-sidebar">
+                            <div class="d-sm-none d-lg-inline-block">Hi, <?= user()->username; ?>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a href="<?= base_url('profile'); ?>" class="dropdown-item has-icon">
+                                <i class="far fa-user"></i> Profile
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="<?= base_url('logout'); ?>" class="dropdown-item has-icon text-danger">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </a>
                         </div>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right">
-                        <a href="<?= base_url('profile'); ?>" class="dropdown-item has-icon">
-                            <i class="far fa-user"></i> Profile
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="<?= base_url('logout'); ?>" class="dropdown-item has-icon text-danger">
-                            <i class="fas fa-sign-out-alt"></i> Logout
-                        </a>
-                    </div>
-                </li>
+                    </li>
+                <?php endif; ?>
             </div>
 
             <div class="main-content">

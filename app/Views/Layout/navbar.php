@@ -10,4 +10,10 @@
             <div class="search-backdrop"></div>
         </div>
     </form>
+    <?php if (!logged_in()) : ?>
+        <ul class="navbar-nav navbar-right">
+            <a class="px-3" style="color: white; font-weight:bold;" href="<?= base_url('login'); ?>">Login</a>
+            <a class="px-3" style="color: white; font-weight:bold;" href="<?= base_url('register'); ?>">Register</a>
+        </ul>
+    <?php endif; ?>
 </nav>
