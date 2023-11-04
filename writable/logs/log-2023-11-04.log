@@ -1805,3 +1805,73 @@ INFO - 2023-11-04 22:46:12 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2023-11-04 22:46:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-04 22:47:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2023-11-04 22:48:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:12:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:12:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:13:14 --> CSRF token verified.
+INFO - 2023-11-04 23:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:13:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:13:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:13:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:13:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:14:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:14:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:14:33 --> CSRF token verified.
+INFO - 2023-11-04 23:14:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:14:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:15:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:16:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:16:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:17:19 --> CSRF token verified.
+INFO - 2023-11-04 23:17:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:17:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-11-04 23:17:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-11-04 23:18:39 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'doa'@'localhost' (using password: YES) in D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'doa', 'ibu', 'hackathon', 3306, '', 0)
+#1 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `id_post...', Array, false)
+#4 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\Perkuliahan\lomba\app\app\Models\Postingan.php(28): CodeIgniter\BaseModel->findAll()
+#7 D:\Perkuliahan\lomba\app\app\Controllers\Dashboard.php(23): App\Models\Postingan->getPostingan()
+#8 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+#9 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#10 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Perkuliahan\lomba\app\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('D:\\Perkuliahan\\...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `id_post...', Array, false)
+#3 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#5 D:\Perkuliahan\lomba\app\app\Models\Postingan.php(28): CodeIgniter\BaseModel->findAll()
+#6 D:\Perkuliahan\lomba\app\app\Controllers\Dashboard.php(23): App\Models\Postingan->getPostingan()
+#7 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+#8 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+#9 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Perkuliahan\lomba\app\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('D:\\Perkuliahan\\...')
+#12 {main}
+CRITICAL - 2023-11-04 23:18:39 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `id_postingan`, `judul`, `postingan`, `postingan`.`file`, `users`.`name`, `postingan`.`created_at`, `profile`
+FROM `postingan`
+INNER JOIN `users` ON `postingan`.`id_user` = `users`.`id`
+ORDER BY `postingan`.`created_at` DESC', [], false)
+ 3 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Models\Postingan.php(28): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH\Controllers\Dashboard.php(23): App\Models\Postingan->getPostingan()
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Dashboard->index()
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Perkuliahan\\lomba\\app\\public\\index.php')

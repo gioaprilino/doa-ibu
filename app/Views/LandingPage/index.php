@@ -20,8 +20,10 @@
             <form action="<?= base_url('search'); ?>" method="get">
                 <input type="text" name="search" placeholder="cari postingan">
             </form>
-            <a href="<?= base_url('register'); ?>" class="button2">Register</a>
-            <a href="<?= base_url('login'); ?>" class="button">Login</a>
+            <?php if (!logged_in()) : ?>
+                <a href="<?= base_url('register'); ?>" class="button2">Register</a>
+                <a href="<?= base_url('login'); ?>" class="button">Login</a>
+            <?php endif; ?>
         </div>
     </div>
 
