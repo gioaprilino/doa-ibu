@@ -56,7 +56,7 @@ $time = Time::parse($data['created_at']);
                 foreach ($comment as $i => $value) :
                     $timeComment = Time::parse($value['created_at']);
                 ?>
-                    <div class="komentar">
+                    <div class="komentar mb-4">
                         <div class="komentar-profile">
                             <div class="profile">
                                 <img src="<?= base_url() . $value['profile']; ?>" alt="" loading="lazy">
@@ -64,9 +64,9 @@ $time = Time::parse($data['created_at']);
                             <div class="profile-detail">
                                 <span><?= $value['name']; ?> • <?= $timeComment->humanize(); ?></span>
                                 <br>
-                                <p><?= $value['comment']; ?></p>
+                                <p class="m-0"><?= $value['comment']; ?></p>
                                 <?php if ($value['file'] != NULL) : ?>
-                                    <div class="col-6">
+                                    <div class="col-6 pl-0">
                                         <img src="<?= base_url() . $value['file']; ?>" alt="" class="img-fluid" loading="lazy">
                                     </div>
                                 <?php endif; ?>

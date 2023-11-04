@@ -16,8 +16,10 @@ class User extends BaseController
     public function user($username)
     {
         $user = $this->userModel->where('username', $username)->first();
-        var_dump($user->email);
-        // $data = ['title' => 'User ' . $user['name']];
-        // return view('User/index', $data);
+        $data = [
+            'title' => 'User ' . $user->username,
+            'data'  => $user
+        ];
+        return view('User/index', $data);
     }
 }

@@ -1,4 +1,16 @@
-body {
+/* body {
+    background-color: #3b1272;
+} */
+
+.main-sidebar > .dropdown {
+    list-style: none;
+}
+
+.btn-primary {
+    box-shadow: none;
+}
+
+.bg-new {
     background-color: #3b1272;
 }
 
@@ -25,6 +37,11 @@ body {
     background-color: white;
 }
 
+.p-sidebar {
+    height: 50px;
+    width: 50px;
+}
+
 .comment-field{
     color: white;
     border-radius: 0;
@@ -37,6 +54,44 @@ body {
 
 .postingan-link {
     text-decoration: none;
+}
+
+.postingan-link:hover {
+    text-decoration: none;
+}
+
+.dropdown-toggle {
+    background-color: #3b1272;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.dropdown-toggle::after{
+    color: white;
+    content: "▴";
+    border: 0;
+    position: absolute;
+    right: 40px;
+    top: 30px;
+}
+
+.dropdown-menu {
+    background-color: #3b1272;
+    top: -10px !important;
+}
+
+.dropdown-menu > * {
+    color: white;
+
+}
+
+.dropdown-toggle > img {
+    padding: .2rem;
+    background-color: white;
+}
+
+.dropdown-toggle > div {
+    color: white;
 }
 
 .comment-field::placeholder {
@@ -65,4 +120,26 @@ body {
     right: 20px;
     top: 10px;
     color: #c5bcff;
+}
+
+.profile-wrapper {
+    border-radius: 10px;
+    background-color: #bababa;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.profile-wrapper > .wrapper >img {
+    border: 5px solid;
+    background-color: white;
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem;
 }

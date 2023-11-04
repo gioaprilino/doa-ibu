@@ -3,6 +3,8 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\Comment;
+use App\Models\Postingan;
 use Myth\Auth\Entities\User;
 use Myth\Auth\Models\UserModel;
 
@@ -10,17 +12,23 @@ class Profile extends BaseController
 {
     protected $userModel;
     protected $userEntities;
+    protected $postinganModel;
+    protected $komenModel;
 
     public function __construct()
     {
         $this->userModel = new UserModel();
         $this->userEntities = new User();
+        $this->postinganModel = new Postingan();
+        $this->komenModel = new Comment();
     }
 
     public function index()
     {
         $data = [
-            'title' => 'Profile'
+            'title' => 'Profile',
+            'data'  => $this->postinganModel->getPostingan(user_id()),
+            'komenModel'    => $this->komenModel
         ];
         return view('Profile/index', $data);
     }

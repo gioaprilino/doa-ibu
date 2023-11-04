@@ -22,5 +22,6 @@ $routes->get('home', 'Dashboard::index');
 $routes->post('post', 'Postingan::insert');
 
 $routes->post('comment/(:num)', 'Comment::insert/$1');
+$routes->get('search', 'Search::index');
 
 $routes->get('post/(:num)', 'Postingan::detail/$1');

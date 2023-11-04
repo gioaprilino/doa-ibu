@@ -26,7 +26,7 @@ use CodeIgniter\I18n\Time;
     foreach ($data as $index => $values) :
         $time = Time::parse($values['created_at']);
     ?>
-        <a href="<?= base_url('post') . '/' . $values['id_postingan']; ?>" class="postingan-link">
+        <a href="<?= base_url('post') . '/' . $values['id_postingan']; ?>" class="postingan-link" style="width: 100%;">
             <div class="card mb-4">
                 <div class="card-header">
                     <div class="profile">
