@@ -11,7 +11,7 @@ $time = Time::parse($data['created_at']);
     <div class="card mb-4">
         <div class="card-header">
             <div class="profile">
-                <img src="<?= base_url(); ?>uploads/default.png" alt="">
+                <img src="<?= base_url() . $data['profile']; ?>" alt="" loading="lazy">
             </div>
             <div class="profile-detail">
                 <span><?= $data['name']; ?></span>
@@ -26,7 +26,7 @@ $time = Time::parse($data['created_at']);
                 </div>
                 <?php if ($data['file'] != NULL) : ?>
                     <div class="col-6">
-                        <img src="<?= base_url() . $data['file']; ?>" alt="" class="img-fluid">
+                        <img src="<?= base_url() . $data['file']; ?>" alt="" class="img-fluid" loading="lazy">
                     </div>
                 <?php endif; ?>
                 <div class="<?= ($data['file'] != NULL) ? 'col-6' : 'col-12'; ?>">
@@ -59,7 +59,7 @@ $time = Time::parse($data['created_at']);
                     <div class="komentar">
                         <div class="komentar-profile">
                             <div class="profile">
-                                <img src="<?= base_url(); ?>uploads/default.png" alt="">
+                                <img src="<?= base_url() . $value['profile']; ?>" alt="" loading="lazy">
                             </div>
                             <div class="profile-detail">
                                 <span><?= $value['name']; ?> • <?= $timeComment->humanize(); ?></span>
@@ -67,7 +67,7 @@ $time = Time::parse($data['created_at']);
                                 <p><?= $value['comment']; ?></p>
                                 <?php if ($value['file'] != NULL) : ?>
                                     <div class="col-6">
-                                        <img src="<?= base_url() . $value['file']; ?>" alt="" class="img-fluid">
+                                        <img src="<?= base_url() . $value['file']; ?>" alt="" class="img-fluid" loading="lazy">
                                     </div>
                                 <?php endif; ?>
                             </div>

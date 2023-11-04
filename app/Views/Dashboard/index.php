@@ -5,7 +5,7 @@ use CodeIgniter\I18n\Time;
 ?>
 <?= $this->extend('Layout/main'); ?>
 <?= $this->section('content'); ?>
-<div class="create-postingan">
+<!-- <div class="create-postingan">
     <form action="<?= base_url('post'); ?>" method="post" enctype="multipart/form-data">
         <?= csrf_field(); ?>
         <div class="judul">
@@ -19,7 +19,7 @@ use CodeIgniter\I18n\Time;
         </div>
         <button type="submit">Kirim</button>
     </form>
-</div>
+</div> -->
 
 <div class="row">
     <?php
@@ -30,7 +30,7 @@ use CodeIgniter\I18n\Time;
             <div class="card mb-4">
                 <div class="card-header">
                     <div class="profile">
-                        <img src="<?= base_url() . $values['profile']; ?>" alt="">
+                        <img src="<?= base_url() . $values['profile']; ?>" alt="" loading="lazy">
                     </div>
                     <div class="profile-detail">
                         <span><?= $values['name']; ?></span>
@@ -45,7 +45,7 @@ use CodeIgniter\I18n\Time;
                         </div>
                         <?php if ($values['file'] != NULL) : ?>
                             <div class="col-6">
-                                <img src="<?= base_url() . $values['file']; ?>" alt="" class="img-fluid">
+                                <img src="<?= base_url() . $values['file']; ?>" alt="" class="img-fluid" loading="lazy">
                             </div>
                         <?php endif; ?>
                         <div class="<?= ($values['file'] != NULL) ? 'col-6' : 'col-12'; ?>">
