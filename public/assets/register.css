@@ -1,0 +1,96 @@
+html {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-header {
+  text-align: center;
+  color: black;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+p{
+  text-align: center;
+  color: #fff;
+}
+body{
+  background-color: #ffffff;
+}
+
+.Register {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+  }
+  
+.logo{
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+    margin: auto;
+    width: 90%;
+    padding: 0 10px;
+  }
+.form{
+    border-radius: 10px;
+  background-color: #3B2061;
+  padding: 20px;
+}
+label{
+  color: #fff;
+}
+
+input[type=text]:focus,
+input[type=text],
+input[type=email],
+input[type=email]:focus,
+input[type=password],
+input[type=password]:focus
+ {
+  color: white;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    background: #4F3D69;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    background: #4F3D69;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #4F3D69;
+  }
+  button[type=submit] {
+    width: 100%;
+    background-color: #2ea043;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button[type=submit]:hover {
+    background-color: #39cc5f;
+  }

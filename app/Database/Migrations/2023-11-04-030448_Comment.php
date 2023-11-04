@@ -39,8 +39,8 @@ class Comment extends Migration
             ],
         ]);
         $this->forge->addKey('id_comment', true);
-        $this->forge->addForeignKey('id_postingan', 'postingan', 'id_postingan', 'NO ACTION', 'CASCADE');
-        $this->forge->addForeignKey('id_user', 'users', 'id_user', 'NO ACTION', 'CASCADE');
+        // $this->forge->addForeignKey('id_postingan', 'postingan', 'id_postingan', 'NO ACTION', 'CASCADE');
+        // $this->forge->addForeignKey('id_user', 'users', 'id_user', 'NO ACTION', 'CASCADE');
         $this->forge->createTable('comments');
     }
 

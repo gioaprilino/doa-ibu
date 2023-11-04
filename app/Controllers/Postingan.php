@@ -86,4 +86,14 @@ class Postingan extends BaseController
         ];
         return view('Postingan/detail', $data);
     }
+
+    public function delete($id)
+    {
+        if (!$this->postinganModel->delete($id)) {
+            session()->setFlashdata('error', 'postingan gagal dihapus');
+            return redirect()->back();
+        }
+        session()->setFlashdata('success', 'postingan berhasil dihapus');
+        return redirect()->back();
+    }
 }

@@ -18,7 +18,7 @@ use CodeIgniter\I18n\Time;
                 </div>
             </div>
             <div class="update-btn-wrapper p-3">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-update">
                     Update Profile
                 </button>
             </div>
@@ -31,14 +31,28 @@ use CodeIgniter\I18n\Time;
             $time = Time::parse($values['created_at']);
         ?>
             <div class="card mb-4">
-                <div class="card-header">
-                    <div class="profile">
-                        <img src="<?= base_url() . user()->profile; ?>" alt="">
+                <div class="card-header d-flex justify-content-between">
+                    <div class="wrapper-profile">
+                        <div class="profile">
+                            <img src="<?= base_url() . user()->profile; ?>" alt="">
+                        </div>
+                        <div class="profile-detail">
+                            <span><?= $values['name']; ?></span>
+                            <br>
+                            <span><?= $time->humanize(); ?></span>
+                        </div>
                     </div>
-                    <div class="profile-detail">
-                        <span><?= $values['name']; ?></span>
-                        <br>
-                        <span><?= $time->humanize(); ?></span>
+                    <div class="dropdown d-inline mr-2">
+                        <button class="btn btn-primary " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-custom">
+                            <form action="<?= base_url('post') . '/' . $values['id_postingan']; ?>" method="post">
+                                <?= csrf_field(); ?>
+                                <input type="hidden" name="_method" value="DELETE">
+                                <button type="submit" class="delete-btn">Hapus</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <div class="card-body">
@@ -99,7 +113,7 @@ use CodeIgniter\I18n\Time;
 </div>
 <?= $this->endSection(); ?>
 <?= $this->section('modal'); ?>
-<div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
+<div class="modal fade" tabindex="-1" role="dialog" id="modal-update">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

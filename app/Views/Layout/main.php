@@ -22,14 +22,15 @@
             <div class="main-sidebar sidebar-style-2 d-flex flex-column justify-content-between">
                 <aside id="sidebar-wrapper">
                     <div class="sidebar-brand">
-                        <a href="index.html">GOSSIP</a>
+                        <a href="<?= base_url('home'); ?>">GOSSIP</a>
                     </div>
                     <div class="sidebar-brand sidebar-brand-sm">
-                        <a href="index.html">GS</a>
+                        <a href="<?= base_url('home'); ?>">GS</a>
                     </div>
                     <ul class="sidebar-menu">
                         <li class="dropdown">
-                            <a href="<?= base_url('home'); ?>" class="nav-link"><i class="fas fa-home"></i><span>Home</span></a>
+                            <a href="<?= base_url('home'); ?>" class="nav-link"><i class="fas fa-home" style="font-size: 1.3rem;"></i><span style="font-size: 1.5rem;">Home</span></a>
+                            <a data-bs-toggle="modal" data-bs-target="#modal-insert" class="nav-link"><i class="fas fa-plus-square" style="font-size: 1.3rem;"></i><span style="font-size: 1.5rem;">Create</span></a>
                         </li>
                     </ul>
                 </aside>
@@ -76,6 +77,39 @@
         })
     </script>
     <?= $this->renderSection('modal'); ?>
+    <div class="modal fade" tabindex="-1" role="dialog" id="modal-insert">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create Postingan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="<?= base_url('post'); ?>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <?= csrf_field(); ?>
+                        <div class="mb-3">
+                            <label for="judul" class="form-label">Judul</label>
+                            <input type="text" id="judul" name="judul" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="postingan" class="form-label">Konten</label>
+                            <textarea name="postingan" id="postingan" class="form-control" cols="30" rows="10"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="file" class="form-label">File</label>
+                            <input type="file" id="file" name="file" class="form-control">
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-whitesmoke br">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-primary">Kirim</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

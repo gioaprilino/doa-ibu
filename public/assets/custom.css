@@ -135,6 +135,15 @@
     align-items: center;
 }
 
+.wrapper-profile {
+    display: flex;
+    gap: 5%;
+}
+
+.profile-detail {
+    min-width: 130px;
+}
+
 .profile-wrapper > .wrapper >img {
     border: 5px solid;
     background-color: white;
@@ -142,4 +151,21 @@
     width: 10rem;
     height: 10rem;
     margin: 1rem;
+}
+
+.dropdown-custom {
+    transform: translate3d(-180px, 30px, 0px) !important;
+    background-color: #6777ef;
+}
+
+.alert-success {
+    color: white;
+}
+
+.delete-btn {
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border: none;
+    width: 100%;
 }

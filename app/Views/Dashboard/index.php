@@ -5,23 +5,8 @@ use CodeIgniter\I18n\Time;
 ?>
 <?= $this->extend('Layout/main'); ?>
 <?= $this->section('content'); ?>
-<!-- <div class="create-postingan">
-    <form action="<?= base_url('post'); ?>" method="post" enctype="multipart/form-data">
-        <?= csrf_field(); ?>
-        <div class="judul">
-            <input type="text" name="judul">
-        </div>
-        <div class="konten">
-            <textarea name="postingan" id="" cols="30" rows="10"></textarea>
-        </div>
-        <div class="file-upload">
-            <input type="file" name="file">
-        </div>
-        <button type="submit">Kirim</button>
-    </form>
-</div> -->
-
 <div class="row">
+
     <?php
     foreach ($data as $index => $values) :
         $time = Time::parse($values['created_at']);

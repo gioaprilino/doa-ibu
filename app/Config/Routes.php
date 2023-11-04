@@ -25,3 +25,4 @@ $routes->post('comment/(:num)', 'Comment::insert/$1');
 $routes->get('search', 'Search::index');
 
 $routes->get('post/(:num)', 'Postingan::detail/$1');
+$routes->delete('post/(:num)', 'Postingan::delete/$1');
