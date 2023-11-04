@@ -16,6 +16,10 @@ class Comment extends BaseController
 
     public function insert($id)
     {
+        if (!logged_in()) {
+            return redirect()->to('/login');
+        }
+
         if ($this->request->getFile('file')->getSize() == 0) {
             $fileRules = 'if_exist';
             $uploadFile = false;
