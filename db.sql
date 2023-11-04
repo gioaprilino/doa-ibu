@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2023 at 12:07 AM
+-- Generation Time: Nov 05, 2023 at 12:56 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -40,7 +40,8 @@ CREATE TABLE `auth_activation_attempts` (
 --
 
 INSERT INTO `auth_activation_attempts` (`id`, `ip_address`, `user_agent`, `token`, `created_at`) VALUES
-(1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', 'f83dfcf1290f61889fea5f5892d458c8', '2023-11-04 22:25:54');
+(1, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', 'f83dfcf1290f61889fea5f5892d458c8', '2023-11-04 22:25:54'),
+(2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36', 'd64c22f7de0748ed9c28928fde4a6c30', '2023-11-04 23:27:51');
 
 -- --------------------------------------------------------
 
@@ -97,7 +98,9 @@ CREATE TABLE `auth_logins` (
 
 INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `success`) VALUES
 (1, '::1', 'kintilgaming78@gmail.com', 2, '2023-11-04 18:56:40', 1),
-(2, '::1', 'beaconsugar@gmail.com', 1, '2023-11-04 22:26:27', 1);
+(2, '::1', 'beaconsugar@gmail.com', 1, '2023-11-04 22:26:27', 1),
+(3, '::1', 'entahsiapa', 1, '2023-11-04 23:27:37', 0),
+(4, '::1', 'beaconsugar@gmail.com', 1, '2023-11-04 23:28:03', 1);
 
 -- --------------------------------------------------------
 
@@ -208,6 +211,13 @@ CREATE TABLE `postingan` (
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `postingan`
+--
+
+INSERT INTO `postingan` (`id_postingan`, `id_user`, `judul`, `postingan`, `file`, `created_at`, `updated_at`) VALUES
+(1, 1, 'testing postingan', 'aksjdlaksjdas\r\n', NULL, '2023-11-04 23:23:52', '2023-11-04 23:23:52');
+
 -- --------------------------------------------------------
 
 --
@@ -219,7 +229,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `username` varchar(30) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
-  `profile` varchar(255) DEFAULT '''uploads/default.png''',
+  `profile` varchar(255) DEFAULT 'default.png',
   `password_hash` varchar(255) NOT NULL,
   `reset_hash` varchar(255) DEFAULT NULL,
   `reset_at` datetime DEFAULT NULL,
@@ -304,8 +314,8 @@ ALTER TABLE `auth_users_permissions`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id_comment`),
-  ADD KEY `id_user` (`id_user`),
-  ADD KEY `id_postingan` (`id_postingan`);
+  ADD KEY `comments_ibfk_1` (`id_user`),
+  ADD KEY `comments_ibfk_2` (`id_postingan`);
 
 --
 -- Indexes for table `migrations`
@@ -318,7 +328,7 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `postingan`
   ADD PRIMARY KEY (`id_postingan`),
-  ADD KEY `id_user` (`id_user`);
+  ADD KEY `postingan_ibfk_1` (`id_user`);
 
 --
 -- Indexes for table `users`
@@ -336,7 +346,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `auth_activation_attempts`
 --
 ALTER TABLE `auth_activation_attempts`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `auth_groups`
@@ -348,7 +358,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `auth_permissions`
@@ -384,7 +394,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `postingan`
 --
 ALTER TABLE `postingan`
-  MODIFY `id_postingan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_postingan` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -427,14 +437,14 @@ ALTER TABLE `auth_users_permissions`
 -- Constraints for table `comments`
 --
 ALTER TABLE `comments`
-  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`id_postingan`) REFERENCES `postingan` (`id_postingan`);
+  ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `comments_ibfk_2` FOREIGN KEY (`id_postingan`) REFERENCES `postingan` (`id_postingan`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `postingan`
 --
 ALTER TABLE `postingan`
-  ADD CONSTRAINT `postingan_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `postingan_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
