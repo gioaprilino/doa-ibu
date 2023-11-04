@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2023 at 12:01 AM
+-- Generation Time: Nov 05, 2023 at 12:07 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -219,7 +219,7 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL,
   `username` varchar(30) DEFAULT NULL,
   `name` varchar(255) NOT NULL,
-  `profile` text DEFAULT 'uploads/default.png',
+  `profile` varchar(255) DEFAULT '''uploads/default.png''',
   `password_hash` varchar(255) NOT NULL,
   `reset_hash` varchar(255) DEFAULT NULL,
   `reset_at` datetime DEFAULT NULL,
