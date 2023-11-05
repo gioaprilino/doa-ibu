@@ -95,10 +95,10 @@ use CodeIgniter\I18n\Time;
                             <div class="komentar">
                                 <div class="komentar-profile">
                                     <div class="profile">
-                                        <img src="<?= base_url() . user()->profile; ?>" alt="">
+                                        <img src="<?= base_url() . $value['profile']; ?>" alt="">
                                     </div>
                                     <div class="profile-detail">
-                                        <span><?= $values['name']; ?> • <?= $timeComment->humanize(); ?></span>
+                                        <span><?= $value['name']; ?> • <?= $timeComment->humanize(); ?></span>
                                         <br>
                                         <p><?= $value['comment']; ?></p>
                                     </div>
