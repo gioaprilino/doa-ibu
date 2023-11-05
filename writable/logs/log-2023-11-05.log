@@ -1,0 +1,49 @@
+ERROR - 2023-11-05 00:23:15 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'doa'@'localhost' (using password: YES) in D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:185
+Stack trace:
+#0 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php(185): mysqli->real_connect('localhost', 'doa', 'ibu', 'hackathon', 3306, '', 0)
+#1 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `id_post...', Array, false)
+#4 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Model.php(196): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\BaseModel.php(563): CodeIgniter\Model->doFind(true, '1')
+#6 D:\Perkuliahan\lomba\app\app\Models\Postingan.php(39): CodeIgniter\BaseModel->find('1')
+#7 D:\Perkuliahan\lomba\app\app\Controllers\Postingan.php(84): App\Models\Postingan->detailPostingan('1')
+#8 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\Postingan->detail('1')
+#9 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Postingan))
+#10 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 D:\Perkuliahan\lomba\app\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('D:\\Perkuliahan\\...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: YES) in D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\MySQLi\Connection.php:229
+Stack trace:
+#0 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(392): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `id_post...', Array, false)
+#3 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Model.php(196): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\BaseModel.php(563): CodeIgniter\Model->doFind(true, '1')
+#5 D:\Perkuliahan\lomba\app\app\Models\Postingan.php(39): CodeIgniter\BaseModel->find('1')
+#6 D:\Perkuliahan\lomba\app\app\Controllers\Postingan.php(84): App\Models\Postingan->detailPostingan('1')
+#7 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(942): App\Controllers\Postingan->detail('1')
+#8 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Postingan))
+#9 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\Perkuliahan\lomba\app\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 D:\Perkuliahan\lomba\app\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(47): require_once('D:\\Perkuliahan\\...')
+#12 {main}
+CRITICAL - 2023-11-05 00:23:15 --> Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: YES)
+in SYSTEMPATH\Database\BaseConnection.php on line 428.
+ 1 SYSTEMPATH\Database\BaseConnection.php(575): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `id_postingan`, `judul`, `postingan`, `postingan`.`file`, `users`.`name`, `postingan`.`created_at`, `profile`
+FROM `postingan`
+INNER JOIN `users` ON `postingan`.`id_user` = `users`.`id`
+WHERE `postingan`.`id_postingan` = :postingan.id_postingan:', [...], false)
+ 3 SYSTEMPATH\Model.php(196): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(563): CodeIgniter\Model->doFind(true, '1')
+ 5 APPPATH\Models\Postingan.php(39): CodeIgniter\BaseModel->find('1')
+ 6 APPPATH\Controllers\Postingan.php(84): App\Models\Postingan->detailPostingan('1')
+ 7 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Postingan->detail('1')
+ 8 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Postingan))
+ 9 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('D:\\Perkuliahan\\lomba\\app\\public\\index.php')
