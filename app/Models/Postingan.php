@@ -43,7 +43,7 @@ class Postingan extends Model
     public function search($keyword)
     {
         $data = $this->select('id_postingan, judul,postingan, postingan.file, users.name, postingan.created_at, profile')
-            ->join('users', 'postingan.id_user = users.id', 'inner')->like('postingan', $keyword)->like('judul', $keyword)->findAll();
+            ->join('users', 'postingan.id_user = users.id', 'inner')->like('postingan', $keyword)->orLike('judul', $keyword)->findAll();
         return $data;
     }
 }
